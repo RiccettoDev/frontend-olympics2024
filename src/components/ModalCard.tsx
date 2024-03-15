@@ -34,7 +34,7 @@ export default function ModalCard({loadCountryWhenClose}: any){
             Cadastrar novo país
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <FormCountryCreate handleCloseCard={handleClose} loadCountryWhenCreate={loadCountryWhenClose()} />
+            <FormCountryCreate />
             <button className='absolute top-6 right-8 cursor-pointer' onClick={() => {handleClose(); loadCountryWhenClose()}}>
               <IoCloseCircleOutline size={32} color='#fff' />
             </button>

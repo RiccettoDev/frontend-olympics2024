@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FiTrash } from 'react-icons/fi'
+import { toast } from "sonner";
 
 import { api } from "../services/api"
 
@@ -28,6 +29,7 @@ export default function CardCountry({countryProps}: any){
 
       const allCountries = countries.filter((country) => country.id !== id)
       setCountries(allCountries)
+      toast.success('País deletado com sucesso!')
     } catch (error) {
       console.log(error);
     }
