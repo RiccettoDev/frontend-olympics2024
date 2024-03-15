@@ -17,7 +17,7 @@ interface CountriesProps{
   created_at: string;
 }
 
-export default function CardCountry({countryProps}: any){
+export default function CardCountry({countryProps, loadCountry}: any){
   const [countries, setCountries] = useState<CountriesProps[]>([])
 
   async function handleDelete(id: string){
@@ -31,6 +31,7 @@ export default function CardCountry({countryProps}: any){
       const allCountries = countries.filter((country) => country.id !== id)
       setCountries(allCountries)
       toast.success('País deletado com sucesso!')
+      loadCountry()
     } catch (error) {
       console.log(error);
     }

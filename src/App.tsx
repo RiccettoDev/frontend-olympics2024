@@ -42,7 +42,7 @@ export default function App() {
 
         <section className="flex flex-wrap justify-between gap-4 mt-12">
           {countries.map((country) => (
-            <CardCountry countryProps={country} />
+            <CardCountry countryProps= {country} loadCountry= {loadCountries}/>
           ))}
         </section>
       </main>

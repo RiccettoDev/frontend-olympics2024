@@ -48,7 +48,7 @@ export default function FormCountryCreate(){
   }
 
   return(
-    <form className="w-full flex flex-col p-4" onSubmit={handleSubmit}>
+    <form className="w-full flex flex-col p-4 items-center" onSubmit={handleSubmit}>
       <label className="font-bold text-white">Nome:</label>
       <input 
         type="text"
@@ -95,7 +95,17 @@ export default function FormCountryCreate(){
       <input 
         type="submit"
         value="Cadastrar"
-        className="cursor-pointer w-full p-2 mt-6 bg-violet-700 rounded font-bold text-white"
+        className="
+          cursor-pointer 
+          w-52 
+          p-2 
+          mt-6 
+          bg-[#c0c0c0] 
+          rounded 
+          font-extrabold 
+          text-indigo-800
+          hover:scale-105
+          active:opacity-45"
       />
     </form>
   )
