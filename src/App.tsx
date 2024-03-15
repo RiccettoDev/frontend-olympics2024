@@ -29,16 +29,18 @@ export default function App() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-indigo-950 flex justify-center px-4">
-      <main className="my-10 w-full md:max-w-2xl">
+    <div className="w-full min-h-screen bg-[#c0c0c0] flex justify-center px-4">
+      <main className="my-10 w-full">
 
         <div className='text-center mb-6'>
-          <h1 className="text-4xl font-medium text-white">Países</h1>
+          <h1 className="text-[48px] font-medium text-indigo-800">Países</h1>
         </div>
 
-        <ModalCard loadCountryWhenClose= {loadCountries}/>
+        <div className='w-full lg:ml-[42%]'>
+          <ModalCard loadCountryWhenClose= {loadCountries}/>
+        </div>
 
-        <section className="flex flex-wrap justify-between gap-4">
+        <section className="flex flex-wrap justify-between gap-4 mt-12">
           {countries.map((country) => (
             <CardCountry countryProps={country} />
           ))}

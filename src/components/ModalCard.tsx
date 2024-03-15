@@ -10,7 +10,7 @@ export default function ModalCard({loadCountryWhenClose}: any){
 
   return(
     <>
-      <div className='bg-violet-700 rounded text-white mb-4 text-center w-52'>
+      <div className='bg-indigo-800 rounded text-white mb-4 text-center w-52'>
         <Button onClick={handleOpen} sx={{color: '#fff', fontWeight: 'bold'}}>Cadastrar novo país</Button>
       </div>
       <Modal

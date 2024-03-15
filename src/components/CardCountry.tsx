@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FiTrash } from 'react-icons/fi'
+import { LiaMedalSolid } from "react-icons/lia";
 import { toast } from "sonner";
 
 import { api } from "../services/api"
@@ -36,19 +37,41 @@ export default function CardCountry({countryProps}: any){
   }
 
   return(
-    <article key={countryProps.id} className="w-full flex bg-indigo-400 rounded p-2 relative hover:scale-105 duration-200">
-              <div className='w-2/3 m-4 flex flex-col text-gray-50'>
-                <p className='my-2'><span className="font-bold">Nome:</span> {countryProps.name}</p>
-                <p><span className="font-bold">Descrição:</span> {countryProps.description}</p>
-                <div className='flex my-2'>
-                  <p><span className="font-bold">Ouro:</span> {countryProps.gold_medals}</p>
-                  <p className='mx-4'><span className="font-bold">Prata:</span> {countryProps.silver_medals}</p>
-                  <p className='mx-4'><span className="font-bold">Bronze:</span> {countryProps.bronze_medals}</p>
+    <article key={countryProps.id} className="w-[95%] flex flex-col bg-indigo-800 rounded p-2 m-2 relative hover:scale-105 duration-200 md:w-[45%] lg:w-[30%]">
+              <div className='m-4 flex flex-col justify-center items-center text-gray-50'>
+                <p className='my-2 text-2xl'><span className="font-bold">Nome:</span> {countryProps.name}</p>
+                <div className='flex items-center justify-center my-6 shadow-2xl shadow-black'>
+                  <img src={countryProps.flag} alt={`Flag: ${countryProps.name}`} className='rounded w-64'/>
                 </div>
-                <p><span className="font-bold">Status:</span> {countryProps.status ? "ATIVO" : "INATIVO"}</p>
-              </div>
-              <div className='flex items-center justify-center'>
-                <img src={countryProps.flag} alt={`Flag: ${countryProps.name}`} className='rounded w-64'/>
+                <p><span className="font-bold">Descrição:</span> {countryProps.description}</p>
+                <div className='flex mt-6 w-full justify-center '>
+                  <p className="
+                    flex 
+                    items-center"
+                  ><span className="
+                    font-bold 
+                    flex 
+                    items-center 
+                    mr-1"><LiaMedalSolid color="#efff0f" size={28} />Ouro:</span> {countryProps.gold_medals}</p>
+                  <p className="
+                    flex 
+                    items-center 
+                    ml-1"
+                    ><span className="
+                      font-bold 
+                      flex 
+                      items-center 
+                      mr-1"><LiaMedalSolid color="#c0c0c0" size={28} />Prata:</span> {countryProps.silver_medals}</p>
+                  <p className="
+                    flex 
+                    items-center 
+                    ml-1"
+                    ><span className="
+                      font-bold 
+                      flex 
+                      items-center 
+                      mr-1"><LiaMedalSolid color="#cd7f32" size={28} />Bronze:</span> {countryProps.bronze_medals}</p>
+                </div>
               </div>
               <button onClick={() => handleDelete(countryProps.id)} className='bg-red-500 w-7 h-7 flex items-center justify-center rounded-lg absolute right-0 -top-2'>
                 <FiTrash size={18} color='#fff'/>
