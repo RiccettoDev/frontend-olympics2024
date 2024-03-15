@@ -48,54 +48,54 @@ export default function FormCountryCreate(){
   }
 
   return(
-    <form className="flex flex-col my-6" onSubmit={handleSubmit}>
-      <label className="font-medium text-white">Nome:</label>
+    <form className="w-full flex flex-col p-4" onSubmit={handleSubmit}>
+      <label className="font-bold text-white">Nome:</label>
       <input 
         type="text"
         placeholder="Digite seu nome..."
-        className="w-full mb-5 p-2 rounded"
+        className="w-full mb-2 p-1 rounded"
         ref={nameRef} 
       />
-      <label className="font-medium text-white">Bandeira:</label>
+      <label className="font-bold text-white">Bandeira:</label>
       <input 
         type="text"
-        placeholder="Adicione a URL da bandeira..."
-        className="w-full mb-5 p-2 rounded"
+        placeholder="Adicione a URL da imagem da bandeira..."
+        className="w-full mb-2 p-1 rounded"
         ref={flagRef} 
       />
-      <label className="font-medium text-white">Descrição:</label>
+      <label className="font-bold text-white">Descrição:</label>
       <input 
         type="text"
         placeholder="Digite a descrição..."
-        className="w-full mb-5 p-2 rounded"
+        className="w-full mb-2 p-1 rounded"
         ref={descriptionRef} 
       />
-      <label className="font-medium text-white">Medalhas de ouro:</label>
+      <label className="font-bold text-white">Medalhas de ouro:</label>
       <input 
         type="text"
         placeholder="Digite a quantidade de medalhas de ouro..."
-        className="w-full mb-5 p-2 rounded"
+        className="w-full mb-2 p-1 rounded"
         ref={gold_medalsRef} 
       />
-      <label className="font-medium text-white">Medalhas de prata:</label>
+      <label className="font-bold text-white">Medalhas de prata:</label>
       <input 
         type="text"
         placeholder="Digite a quantidade de medalhas de prata..."
-        className="w-full mb-5 p-2 rounded"
+        className="w-full mb-2 p-1 rounded"
         ref={silver_medalsRef} 
       />
-      <label className="font-medium text-white">Medalhas de bronze:</label>
+      <label className="font-bold text-white">Medalhas de bronze:</label>
       <input 
         type="text"
         placeholder="Digite a quantidade de medalhas de bronze..."
-        className="w-full mb-5 p-2 rounded"
+        className="w-full mb-2 p-1 rounded"
         ref={bronze_medalsRef} 
       />
 
       <input 
         type="submit"
         value="Cadastrar"
-        className="cursor-pointer w-full p-2 bg-violet-700 rounded font-medium text-white" 
+        className="cursor-pointer w-full p-2 mt-6 bg-violet-700 rounded font-bold text-white"
       />
     </form>
   )

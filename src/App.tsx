@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { FiTrash } from 'react-icons/fi'
 import { api } from './services/api'
-import FormCountryCreate from './components/FormCountryCreate' 
+
+import ModalCard from './components/ModalCard'
 
 interface CountriesProps{
   id: string;
@@ -42,18 +43,15 @@ export default function App() {
     }
   }
 
-  async function handleAddCountry(newCountry: CountriesProps) {
-    setCountries(prevCountries => [...prevCountries, newCountry])
-  }
-
   return (
     <div className="w-full min-h-screen bg-indigo-950 flex justify-center px-4">
       <main className="my-10 w-full md:max-w-2xl">
+
         <div className='text-center mb-6'>
           <h1 className="text-4xl font-medium text-white">Países</h1>
         </div>
 
-        <FormCountryCreate />
+        <ModalCard loadCountryWhenClose= {loadCountries}/>
 
         <section className="flex flex-wrap justify-between gap-4">
           {countries.map((country) => (
