@@ -1,5 +1,6 @@
 import { useState, useRef, FormEvent } from "react"
 import { api } from "../services/api"
+import { toast } from "sonner";
 
 interface CountriesProps{
   id: string;
@@ -106,6 +107,7 @@ export default function FormCountryCreate(){
           text-indigo-800
           hover:scale-105
           active:opacity-45"
+        onClick={() => toast.success('País cadastrado com sucesso!')}
       />
     </form>
   )
