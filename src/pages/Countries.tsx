@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { api } from '../services/api'
 
 import ModalCard from '../components/ModalCard'
@@ -18,6 +18,7 @@ interface CountriesProps{
 
 export default function Countries() {
   const [countries, setCountries] = useState<CountriesProps[]>([])
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     loadCountries()
@@ -28,12 +29,24 @@ export default function Countries() {
     setCountries(response.data)    
   }
 
+  const filterCountries = useMemo(() => {
+    const lowerSearch = search.toLowerCase()
+    return countries.filter((country) => country.name.toLowerCase().includes(lowerSearch))
+  }, [countries, search])
+
   return (
     <div className="w-full min-h-screen bg-[#c0c0c0] flex justify-center px-4">
       <main className="my-10 w-full">
 
         <div className='text-center mb-6'>
           <h1 className="text-[48px] font-extrabold text-indigo-800">Países</h1>
+          <input 
+            type="text" 
+            value={search} 
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder='Digite sua busca'
+            className='text-center rounded p-2 shadow-2xl shadow-black font-extrabold text-white bg-indigo-800' 
+          />
         </div>
 
         <div className='w-full lg:ml-[42%]'>
@@ -41,7 +54,7 @@ export default function Countries() {
         </div>
 
         <section className="flex flex-wrap justify-between gap-4 mt-12">
-          {countries.map((country) => (
+          {filterCountries.map((country) => (
             <CardCountry countryProps= {country} loadCountry= {loadCountries}/>
           ))}
         </section>
