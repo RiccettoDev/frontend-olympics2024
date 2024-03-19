@@ -37,7 +37,7 @@ export default function Stadiums(){
       <main className="my-10 w-full">
 
         <div className='text-center mb-6'>
-          <h1 className="text-[48px] font-medium text-indigo-800">Arenas</h1>
+          <h1 className="text-[48px] font-extrabold text-indigo-800">Arenas</h1>
           <input 
             type="text" 
             value={search} 
