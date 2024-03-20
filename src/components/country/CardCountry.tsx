@@ -3,7 +3,7 @@ import { FiTrash } from 'react-icons/fi'
 import { LiaMedalSolid } from "react-icons/lia";
 import { toast } from "sonner";
 
-import { api } from "../services/api"
+import { api } from "../../services/api"
 
 interface CountriesProps{
   id: string;

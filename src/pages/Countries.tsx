@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo } from 'react'
 import { api } from '../services/api'
 
-import ModalCard from '../components/ModalCard'
-import CardCountry from '../components/CardCountry'
+import ModalCard from '../components/country/ModalCard'
+import CardCountry from '../components/country/CardCountry'
 
 interface CountriesProps{
   id: string;
