@@ -5,6 +5,8 @@ import { toast } from "sonner";
 
 import { api } from "../../services/api"
 
+import ModalCardUpdate from "./ModalCardUpdate";
+
 interface CountriesProps{
   id: string;
   name: string;
@@ -76,6 +78,9 @@ export default function CardCountry({countryProps, loadCountry}: any){
               </div>
               <button onClick={() => handleDelete(countryProps.id)} className='bg-red-500 w-7 h-7 flex items-center justify-center rounded-lg absolute right-0 -top-2'>
                 <FiTrash size={18} color='#fff'/>
+              </button>
+              <button className='bg-slate-800 w-7 h-7 flex items-center justify-center rounded-lg absolute left-0 -top-2'>
+                <ModalCardUpdate id={countryProps.id}/>
               </button>
           </article>
   )
